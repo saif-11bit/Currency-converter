@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="{{ url_for('static', filename='index.js')}}"></script>
     <title>Currency Converter</title>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Currency Converter</span>
+    </nav>
+    <div class="container my-4">
     <form id="form">
-        <input id="base_curr" autocomplete="off" placeholder="Currency-From"><br>
-        <input id="currency" autocomplete="off" placeholder="Currency-To">
-        <input type="submit" value="Get Exchange Rate">
+        <input id="base_curr" autocomplete="off" placeholder="Currency-From"><br><br>
+        <input id="currency" autocomplete="off" placeholder="Currency-To"><br><br>
+        <input type="submit" value="Get Exchange Rate" class="btn btn-primary">
     </form>
+    </div>
     <br>
-    <div id="result"></div>
+    <h3>
+    <div id="result" class="container"></div>
+    </h3>
 </body>
 </html>
