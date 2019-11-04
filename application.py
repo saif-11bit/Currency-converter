@@ -11,8 +11,9 @@ def index():
 def convert():
 
     # Query for currency exchange rate
+    base = request.form.get("base")
     currency = request.form.get("currency")
-    res = requests.get("https://api.exchangeratesapi.io/latest", params={"base":"USD", "symbols": currency})
+    res = requests.get("https://api.exchangeratesapi.io/latest", params={"base":base, "symbols": currency})
 
 
     # Make sure request succeeded

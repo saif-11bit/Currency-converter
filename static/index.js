@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         //initializing new request
         const request = new XMLHttpRequest();
+        const base = document.querySelector('#base_curr').value;
         const currency = document.querySelector('#currency').value;
         request.open('POST', '/convert');
 
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             //Update request div 
             if (data.success){
-                const contents = `1 USD is equal to ${data.rate} ${currency}.`
+                const contents = `1 ${base} is equal to ${data.rate} ${currency}.`
                 document.querySelector('#result').innerHTML = contents;
             }
             else{
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //Add data to send request
         const data = new FormData();
         data.append('currency', currency);
+        data.append('base', base);
 
         //Send data
         request.send(data);
